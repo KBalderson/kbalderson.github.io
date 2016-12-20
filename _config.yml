@@ -13,3 +13,5 @@ exclude: [vendor]
 
 # Build settings
 markdown: kramdown
+
+theme: jekyll-theme-slate
