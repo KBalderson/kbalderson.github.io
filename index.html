@@ -137,6 +137,55 @@
       outline-offset: 3px;
     }
 
+    .qr-toggle {
+      margin-top: 28px;
+      background: none;
+      border: 0;
+      color: var(--muted);
+      font: inherit;
+      font-size: 14px;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      cursor: pointer;
+      padding: 6px 8px;
+      border-radius: 6px;
+    }
+    .qr-toggle:hover { color: var(--fg); }
+    .qr-toggle:focus-visible { outline: 2px solid var(--fg); outline-offset: 2px; }
+
+    dialog.qr-dialog {
+      margin: auto;
+      border: 1px solid var(--card-border);
+      border-radius: 18px;
+      background: var(--card);
+      color: var(--fg);
+      padding: 24px;
+      width: min(340px, calc(100vw - 32px));
+      text-align: center;
+    }
+    dialog.qr-dialog::backdrop { background: rgba(0, 0, 0, .55); }
+    dialog.qr-dialog svg.qr {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+    dialog.qr-dialog p {
+      margin: 14px 0 16px;
+      font-size: 15px;
+      color: var(--muted);
+    }
+    dialog.qr-dialog button {
+      background: var(--card-hover);
+      color: var(--card-hover-fg);
+      border: 0;
+      border-radius: 10px;
+      padding: 10px 22px;
+      font: inherit;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
     @media (prefers-reduced-motion: reduce) {
       a.link { transition: none; }
       a.link:hover, a.link:focus-visible { transform: none; }
@@ -153,6 +202,19 @@
       <li><a class="link" href="https://baldersonsoftware.com" target="_blank" rel="noopener">Balderson Software</a></li>
       <li><a class="link" href="https://www.linkedin.com/in/fkbalderson/" target="_blank" rel="noopener">LinkedIn</a></li>
     </ul>
+    <button type="button" class="qr-toggle" id="qr-open">Show QR code</button>
   </main>
+  <dialog class="qr-dialog" id="qr-dialog" aria-label="QR code for this page">
+    <svg role="img" aria-label="QR code for www.kylebalderson.com" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 37 37" class="qr"><path fill="#fff" d="M0 0h37v37h-37z"/><path stroke="#000" d="M4 4.5h7m3 0h3m1 0h5m3 0h7m-29 1h1m5 0h1m1 0h2m2 0h1m1 0h2m1 0h1m1 0h1m2 0h1m5 0h1m-29 1h1m1 0h3m1 0h1m3 0h2m1 0h4m5 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m1 0h2m1 0h2m1 0h2m1 0h2m3 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m1 0h3m1 0h2m4 0h2m2 0h1m1 0h3m1 0h1m-29 1h1m5 0h1m3 0h6m4 0h1m1 0h1m5 0h1m-29 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-21 1h4m1 0h2m1 0h1m-16 1h1m1 0h4m1 0h1m2 0h2m3 0h2m1 0h1m1 0h2m1 0h2m1 0h1m-28 1h2m1 0h1m3 0h1m4 0h2m3 0h3m1 0h1m1 0h2m1 0h2m-26 1h3m1 0h1m3 0h5m1 0h1m3 0h4m1 0h2m-27 1h1m1 0h1m4 0h2m4 0h2m2 0h4m2 0h3m2 0h1m-29 1h2m2 0h3m1 0h1m1 0h3m3 0h1m4 0h2m2 0h1m1 0h1m-24 1h2m2 0h1m5 0h1m2 0h2m3 0h1m1 0h1m1 0h1m1 0h1m-28 1h8m2 0h2m6 0h5m1 0h1m2 0h1m-28 1h2m4 0h2m1 0h1m3 0h2m3 0h1m1 0h1m2 0h3m-27 1h1m3 0h1m1 0h3m4 0h3m2 0h1m1 0h1m4 0h1m1 0h1m-28 1h2m2 0h1m2 0h1m1 0h2m2 0h1m4 0h2m4 0h3m-27 1h2m4 0h3m1 0h1m1 0h2m2 0h1m1 0h3m3 0h3m1 0h1m-29 1h2m1 0h3m3 0h8m4 0h4m1 0h1m1 0h1m-29 1h2m4 0h2m1 0h2m2 0h1m2 0h2m2 0h7m-19 1h1m1 0h2m2 0h2m1 0h1m1 0h2m3 0h3m-27 1h7m4 0h2m2 0h1m3 0h2m1 0h1m1 0h1m1 0h1m-27 1h1m5 0h1m1 0h4m5 0h1m1 0h2m3 0h2m1 0h2m-29 1h1m1 0h3m1 0h1m1 0h1m2 0h1m4 0h9m3 0h1m-29 1h1m1 0h3m1 0h1m1 0h1m2 0h1m1 0h2m2 0h2m4 0h1m2 0h2m-28 1h1m1 0h3m1 0h1m2 0h4m2 0h2m1 0h1m1 0h2m1 0h3m1 0h2m-29 1h1m5 0h1m1 0h1m4 0h2m1 0h1m4 0h1m2 0h3m1 0h1m-29 1h7m5 0h1m1 0h2m3 0h2m1 0h3"/></svg>
+    <p>www.kylebalderson.com</p>
+    <form method="dialog"><button>Close</button></form>
+  </dialog>
+  <script>
+    (function () {
+      var dialog = document.getElementById('qr-dialog');
+      document.getElementById('qr-open').addEventListener('click', function () { dialog.showModal(); });
+      dialog.addEventListener('click', function (e) { if (e.target === dialog) dialog.close(); });
+    })();
+  </script>
 </body>
 </html>
